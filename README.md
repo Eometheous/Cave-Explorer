@@ -27,7 +27,7 @@ M5 (3/18-3/29)
 Design algorithms for solving the puzzle
 implement hints using the algorithm
 
-M6 (4/8-4-19)
+M6 (4/8-4/19)
 bug fixing
 ```
 Flask is the Frontend and backend technology tool to be used
