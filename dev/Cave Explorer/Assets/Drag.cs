@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Drag : MonoBehaviour
 {
@@ -16,10 +17,11 @@ public class Drag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dragging)
-        {
-            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+        if (dragging) {
+            Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = clickedPosition + offset;
         }
+       
     }
 
     void OnMouseDown()
