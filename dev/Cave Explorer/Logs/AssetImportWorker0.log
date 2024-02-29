@@ -1932,3 +1932,51 @@ Received Import Request.
 Start importing Assets/CaveEntrance.prefab using Guid(d6365edaa8a1d460c8bde196f226c995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04b761d7ac4ce15d35ff2234e912eadc') in 0.004058 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 319.035206 seconds.
+  path: Assets/Scenes/Level1.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level1.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06aa0ca35658cea45da09f2d2f87b59a') in 0.002111 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 112.907183 seconds.
+  path: Assets/Scenes/Level2.unity
+  artifactKey: Guid(0ae6d308c662e45cead8b673cef050de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level2.unity using Guid(0ae6d308c662e45cead8b673cef050de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2212e5d68c025244ae934ef25506b52e') in 0.000644 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 119.306120 seconds.
+  path: Assets/GameBorder 1.prefab
+  artifactKey: Guid(0a839e09968964b61bb3d7547cf6e397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GameBorder 1.prefab using Guid(0a839e09968964b61bb3d7547cf6e397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fddbc1a442a7a7e8f7bce251fe5655a') in 0.015550 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 28
+========================================================================
+Received Import Request.
+  Time since last request: 33.039793 seconds.
+  path: Assets/GameBorder 1.prefab
+  artifactKey: Guid(0a839e09968964b61bb3d7547cf6e397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GameBorder 1.prefab using Guid(0a839e09968964b61bb3d7547cf6e397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b3726940a367c3693f8f3515245d07b') in 0.005197 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 28
+========================================================================
+Received Import Request.
+  Time since last request: 2.452136 seconds.
+  path: Assets/GameBorder 1.prefab
+  artifactKey: Guid(0a839e09968964b61bb3d7547cf6e397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GameBorder 1.prefab using Guid(0a839e09968964b61bb3d7547cf6e397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6214500a58748ee49100fdb67b98a31') in 0.005588 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 28
+========================================================================
+Received Import Request.
+  Time since last request: 22.931555 seconds.
+  path: Assets/Scenes/Level2.unity
+  artifactKey: Guid(0ae6d308c662e45cead8b673cef050de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level2.unity using Guid(0ae6d308c662e45cead8b673cef050de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '861959fd3181192783f7fba7f92243b7') in 0.000990 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
