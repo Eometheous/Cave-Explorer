@@ -1884,3 +1884,51 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 611.863081 seconds.
+  path: Assets/3x1Rectangle 1.prefab
+  artifactKey: Guid(d968facea1ad74322985fed81d287a23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3x1Rectangle 1.prefab using Guid(d968facea1ad74322985fed81d287a23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0d47f88db874c1f96dce597f0bf910e') in 0.030975 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 22.877077 seconds.
+  path: Assets/MoveableObject.prefab
+  artifactKey: Guid(d968facea1ad74322985fed81d287a23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MoveableObject.prefab using Guid(d968facea1ad74322985fed81d287a23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c9dbfbcc7f4ae61a93c12c97a68c224') in 0.005076 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 9.829524 seconds.
+  path: Assets/MoveableObject.prefab
+  artifactKey: Guid(d968facea1ad74322985fed81d287a23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MoveableObject.prefab using Guid(d968facea1ad74322985fed81d287a23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be788084d2e9aad286b7a4fa46a8b4dc') in 0.004810 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 1.287955 seconds.
+  path: Assets/MoveableObject.prefab
+  artifactKey: Guid(d968facea1ad74322985fed81d287a23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MoveableObject.prefab using Guid(d968facea1ad74322985fed81d287a23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a4f4d8b890ded78ef43a6c1ab9432ce') in 0.004777 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 69.346210 seconds.
+  path: Assets/CaveEntrance.prefab
+  artifactKey: Guid(d6365edaa8a1d460c8bde196f226c995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CaveEntrance.prefab using Guid(d6365edaa8a1d460c8bde196f226c995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c954d0236357a40a1819aaaf1444a522') in 0.004272 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 32.235439 seconds.
+  path: Assets/CaveEntrance.prefab
+  artifactKey: Guid(d6365edaa8a1d460c8bde196f226c995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CaveEntrance.prefab using Guid(d6365edaa8a1d460c8bde196f226c995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04b761d7ac4ce15d35ff2234e912eadc') in 0.004058 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
