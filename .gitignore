@@ -1,4 +1,9 @@
 ###
+# Virtual Python Environment
+###
+.venv
+
+###
 # Unity folders and files
 ###
 [Aa]ssets/AssetStoreTools*
