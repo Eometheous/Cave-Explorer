@@ -18,6 +18,6 @@ For the controls of the game, go to the README under docs/app_users
 
 cd into dev/web_app/flask
 <br>
-download flask and its dependencies here https://flask.palletsprojects.com/en/3.0.x/installation/#python-version
+follow the download instructions for flask and its dependencies here https://flask.palletsprojects.com/en/3.0.x/installation/#python-version
 <br>
-start the server with `python3 -m flask --app app.py run;`
+start the server with `python3 -m flask --app app.py run`
