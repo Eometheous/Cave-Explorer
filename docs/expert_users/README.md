@@ -5,7 +5,7 @@ Download Unity Hub from https://unity.com/products/unity-engine
 <br>
 Activate a free personal licence.
 <br>
-Download and install Unity 2022.3.19f1 from Unity Hub
+Download and install Unity 2022.3.20f1 from Unity Hub
 <br>
 Add and open the Cave Explorer project under /dev/Cave Explorer
 <br>
