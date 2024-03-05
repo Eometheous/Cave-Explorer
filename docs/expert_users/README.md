@@ -1,7 +1,6 @@
 <h1>How to build the project</h1> 
 
 <h2>Unity</h2>
-<P>
 Download Unity Hub from https://unity.com/products/unity-engine
 <br>
 Activate a free personal licence.
@@ -13,4 +12,12 @@ Add and open the Cave Explorer project under /dev/Cave Explorer
 Click the play button on the top middle of the screen to start playing the game. 
 
 For the controls of the game, go to the README under docs/app_users
-</P>
+
+
+<h2>Flask</h2>
+
+cd into dev/web_app/flask
+<br>
+download flask and its dependencies here https://flask.palletsprojects.com/en/3.0.x/installation/#python-version
+<br>
+start the server with `python3 -m flask --app app.py run;`
