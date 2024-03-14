@@ -13,3 +13,6 @@ def sign_up():
 @app.route("/user/login")
 def login():
     return render_template('user/login.html')
+
+if __name__ == '__main__':
+    app.run(debug=True, port=8080)
