@@ -24,7 +24,7 @@ start the server with `python3 -m flask --app app.py run`
 
 <h2>React</h2>
 
-cd into dev/web_app/react
+cd into dev/web_app/react/cave-explorer
 <br>
 run npm run dev
 <br>
