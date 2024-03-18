@@ -21,3 +21,11 @@ cd into dev/web_app/flask
 follow the download instructions for flask and its dependencies here https://flask.palletsprojects.com/en/3.0.x/installation/#python-version
 <br>
 start the server with `python3 -m flask --app app.py run`
+
+<h2>React</h2>
+
+cd into dev/web_app/react
+<br>
+run npm run dev
+<br>
+click on the url to the local web server
