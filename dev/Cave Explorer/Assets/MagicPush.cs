@@ -31,6 +31,8 @@ public class Drag : MonoBehaviour
     void OnMouseUp() 
     {
         force = Camera.main.ScreenToWorldPoint(Input.mousePosition) - clickedPosition;
+        if (Math.Abs(force.x) > Math.Abs(force.y)) force.y = 0;
+        else force.x = 0;
         if (rb.CompareTag("Player")) {
             rb.AddForce(force * 100);
         }
