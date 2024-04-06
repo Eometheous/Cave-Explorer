@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
+        <Link
           href="/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
@@ -33,12 +33,11 @@ export default function RootLayout({
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
             Play Cave Explorer, by Jonathan Thomas.
           </p>
-        </a>
+        </Link>
 
         <a
           href="/pages/dashboard/login"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
@@ -52,10 +51,9 @@ export default function RootLayout({
           </p>
         </a>
 
-        <a
+        <Link
           href="/pages/dashboard/sign-up"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
@@ -67,12 +65,11 @@ export default function RootLayout({
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
             Create an account to save your progress.
           </p>
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
@@ -84,7 +81,7 @@ export default function RootLayout({
           <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
             Learn more about this game. 
           </p>
-        </a>
+        </Link>
       </div>
         <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
       </body>
