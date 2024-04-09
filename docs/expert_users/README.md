@@ -19,7 +19,7 @@ For the controls of the game, go to the README under docs/app_users
 cd into dev/web_app/flask
 <br>
 Create a Virtual Python Environment
-MacOS: 
+<h3>MacOS:</h3> 
 
 `
 python3 -m venv .venv`
@@ -28,7 +28,7 @@ python3 -m venv .venv`
  `
  <br>
 
-Windows: 
+<h3>Windows:</h3> 
 
 `
 py -3 -m venv .venv
