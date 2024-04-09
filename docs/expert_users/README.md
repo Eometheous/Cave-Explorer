@@ -20,17 +20,23 @@ cd into dev/web_app/flask
 <br>
 Create a Virtual Python Environment
 MacOS: 
-```
-python3 -m venv .venv
 
- . .venv/bin/activate
- ```
+`
+python3 -m venv .venv`
+
+ `. .venv/bin/activate
+ `
+ <br>
+
 Windows: 
-```
-py -3 -m venv .venv
 
+`
+py -3 -m venv .venv
+`
+
+`
 .venv\Scripts\activate
-```
+`
 
 Install flask with `pip install Flask`
 <br>
