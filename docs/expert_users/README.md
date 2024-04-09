@@ -1,17 +1,18 @@
 <h1>How to build the project</h1> 
 
 <h2>Unity (Optional)</h2>
-Download Unity Hub from https://unity.com/products/unity-engine
 
-Activate a free personal licence.
+1. Download Unity Hub from https://unity.com/products/unity-engine
 
-Download and install Unity 2022.3.20f1 from Unity Hub
+2. Activate a free personal licence.
 
-Add and open the Cave Explorer project under /dev/Cave Explorer
+3. Download and install Unity 2022.3.20f1 from Unity Hub
 
-Click the play button on the top middle of the screen to start playing the game. 
+4. Add and open the Cave Explorer project under /dev/Cave Explorer
 
-For the controls of the game, go to the README under docs/app_users
+5. Click the play button on the top middle of the screen to start playing the game. 
+
+6. For the controls of the game, go to the README under docs/app_users
 
 
 <h2>Flask (Skip for now)</h2>
