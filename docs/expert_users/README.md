@@ -24,8 +24,8 @@ start the server with `python3 -m flask --app app.py run`
 
 <h2>React</h2>
 
-cd into dev/web_app/react/cave-explorer
+cd into `dev/web_app/react/cave-explorer`
 <br>
-run npm run dev
+run `npm run dev`
 <br>
 click on the url to the local web server
