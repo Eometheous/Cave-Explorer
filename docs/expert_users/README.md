@@ -14,7 +14,7 @@ Click the play button on the top middle of the screen to start playing the game.
 For the controls of the game, go to the README under docs/app_users
 
 
-<h2>Flask</h2>
+<h2>Flask (Skip for now)</h2>
 Open another terminal window to run the flask server
 
 cd into `dev/web_app/flask`
