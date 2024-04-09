@@ -1,6 +1,6 @@
 <h1>How to build the project</h1> 
 
-<h2>Unity</h2>
+<h2>Unity (Optional)</h2>
 Download Unity Hub from https://unity.com/products/unity-engine
 <br>
 Activate a free personal licence.
