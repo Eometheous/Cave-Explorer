@@ -15,9 +15,11 @@ For the controls of the game, go to the README under docs/app_users
 
 
 <h2>Flask</h2>
+Open another terminal window to run the flask server
 
-cd into dev/web_app/flask
+cd into `dev/web_app/flask`
 <br>
+
 Create a Virtual Python Environment
 <h3>MacOS:</h3> 
 
@@ -44,6 +46,7 @@ Finally,
 start the server with `python3 -m flask --app app.py run`
 
 <h2>React</h2>
+Open another terminal window to run the react server
 
 cd into `dev/web_app/react/cave-explorer`
 <br>
