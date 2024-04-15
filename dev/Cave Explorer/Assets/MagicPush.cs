@@ -33,10 +33,12 @@ public class Drag : MonoBehaviour
     {
         clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         clicked = true;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     void OnMouseUp() 
     {
         clicked = false;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 }
