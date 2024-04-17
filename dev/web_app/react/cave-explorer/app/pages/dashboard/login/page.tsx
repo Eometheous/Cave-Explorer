@@ -11,7 +11,7 @@ export default function login() {
                             </label>
                             <div className="relative">
                                 <input 
-                                    className="peer block w-full rounded-md border border-gray-200"
+                                    className="text-black peer block w-full rounded-md border border-gray-200"
                                     id="email"
                                     type="email"
                                     name="email"
@@ -24,7 +24,7 @@ export default function login() {
                             </label>
                             <div className="relative">
                                 <input 
-                                    className="peer block w-full rounded-md border border-gray-200"
+                                    className="text-black peer block w-full rounded-md border border-gray-200"
                                     id="password"
                                     type="password"
                                     name="password"
