@@ -16,7 +16,10 @@ public class LevelSwitcher : MonoBehaviour
     }
     
     private void OnTriggerEnter2D(Collider2D other) {
-        level++;
-        if (other.CompareTag("Player")) SceneManager.LoadScene(level);
+        
+        if (other.CompareTag("Player")) {
+            level++;
+            SceneManager.LoadScene(level);
+        }
     }
 }
