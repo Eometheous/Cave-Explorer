@@ -2,21 +2,24 @@
 
 import { FormEvent } from "react";
 
-async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    'use server';
-    event.preventDefault()
- 
-    const formData = new FormData(event.currentTarget)
-    const response = await fetch('/api/add-user/route.ts', {
-      method: 'POST',
-      body: formData,
-    })
-}
+
 
 export default function sign_up() {
+    async function onSubmit(event: FormEvent<HTMLFormElement>) {
+        'use server';
+        event.preventDefault()
+     
+        const formData = new FormData(event.currentTarget)
+        const response = await fetch('https://cave-explorer.vercel.app/api/add-user', {
+          method: 'POST',
+          body: formData,
+        })
+        console.log("submitting data")
+    }
+
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <form onSubmit={onSubmit} className="space-y-3">
+            <form action={"https://cave-explorer.vercel.app/api/add-user"} className="space-y-3">
                 <div className="flex-1 rounded-lg px-6 pb-4 pt-8">
                     <h1>Please enter your information below</h1>
                     <div className="w-full">
@@ -34,7 +37,7 @@ export default function sign_up() {
                                     required
                                 />
                             </div>
-                            <label htmlFor="email">
+                            <label htmlFor="name">
                                 Username
                             </label>
                             <div className="relative">
@@ -47,7 +50,7 @@ export default function sign_up() {
                                     required
                                 />
                             </div>
-                            <label htmlFor="email">
+                            <label htmlFor="password">
                                 Password
                             </label>
                             <div className="relative">

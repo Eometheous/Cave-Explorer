@@ -20,7 +20,7 @@ def home():
     cursor.close()
     return
 
-@app.route("/user/sign_up", methods=['POST'])
+@app.route("/user/sign-up", methods=['POST'])
 def sign_up():
     if request.method == 'POST':
         email = request.form['email']
@@ -30,7 +30,7 @@ def sign_up():
         cursor.execute("INSERT INTO users (name, email, password) VALUES (%s, %s, %s)", (username, email, password))
         conn.commit()
         cursor.close()
-        
+
     return
 
 @app.route("/user/login")
