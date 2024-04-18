@@ -12,6 +12,7 @@ public class Drag : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     // Update is called once per frame
