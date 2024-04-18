@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5881310332783821336, guid: 398ab69aa2b8a4c388795b41d46ad682, type: 3}
       propertyPath: m_EdgeRadius
-      value: 0.51
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 8367888449828297030, guid: 398ab69aa2b8a4c388795b41d46ad682, type: 3}
       propertyPath: m_Size.y
