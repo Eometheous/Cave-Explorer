@@ -1,17 +1,37 @@
-from flask import Flask, render_template
-from cassandra.cluster import Cluster
+from flask import Flask, request
+from dotenv import load_dotenv
+import os
+import psycopg2
 
+load_dotenv()
 app = Flask(__name__)
-cluster = Cluster(['0.0.0.0'], port=9042)
-session = cluster.connect(keyspace="cave_explorer")
+conn = psycopg2.connect(
+    database=os.getenv('POSTGRES_DATABASE'),
+    user=os.getenv('POSTGRES_USER'),
+    password=os.getenv('POSTGRES_PASSWORD'),
+    host=os.getenv('POSTGRES_HOST')
+)
 
 @app.route("/")
 def home():
-    return render_template('index.html')
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO users (name, email, password) VALUES (%s, %s, %s)", ('TallGuy', 'sthomas@mac.com', '1234'))
+    conn.commit()
+    cursor.close()
+    return
 
-@app.route("/user/sign_up")
+@app.route("/user/sign_up", methods=['POST'])
 def sign_up():
-    return render_template('user/sign_up.html')
+    if request.method == 'POST':
+        email = request.form['email']
+        username = request.form['username']
+        password = request.form['password']
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO users (name, email, password) VALUES (%s, %s, %s)", (username, email, password))
+        conn.commit()
+        cursor.close()
+        
+    return
 
 @app.route("/user/login")
 def login():
