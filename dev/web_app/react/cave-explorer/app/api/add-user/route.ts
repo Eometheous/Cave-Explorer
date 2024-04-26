@@ -2,7 +2,7 @@ import { sql } from "@vercel/postgres";
 
 import { NextResponse } from "next/server";
 
-export async function GET(request: Request) {
+export async function POST(request: Request) {
    const { searchParams } = new URL(request.url);
    const userName = searchParams.get('name');
    const email = searchParams.get('email');
@@ -15,9 +15,9 @@ export async function GET(request: Request) {
 
     const result = await sql`INSERT INTO users (name, email, password) VALUES (${userName}, ${email}, ${hashedPass});`; 
 
-    return NextResponse.redirect(new URL('/pages/dashboard/login', request.url))
+    return NextResponse.redirect(new URL('/pages/auth/login', request.url))
     
    } catch (error) {
-    return NextResponse.json( { error }, { status: 500 });
+      return NextResponse.redirect(new URL('/pages/auth/sign-up', request.url))
    }
 }
