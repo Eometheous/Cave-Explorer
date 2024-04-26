@@ -19,7 +19,7 @@ export default function sign_up() {
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <form action={"https://cave-explorer.vercel.app/api/add-user"} className="space-y-3">
+            <form action={"/api/add-user"} className="space-y-3">
                 <div className="flex-1 rounded-lg px-6 pb-4 pt-8">
                     <h1>Please enter your information below</h1>
                     <div className="w-full">
