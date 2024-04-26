@@ -24,6 +24,7 @@ export async function POST(request: Request) {
         if (user && passwordMatch) {
             return NextResponse.redirect(new URL('/pages/dashboard/', request.url))
         }
+        return NextResponse.redirect(new URL('/pages/auth/login', request.url))
     } catch (error) {
         return NextResponse.redirect(new URL('/pages/auth/login', request.url))
     }
