@@ -1,7 +1,7 @@
 export default function login() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <form className="space-y-3">
+            <form action="/api/login" className="space-y-3">
                 <div className="flex-1 rounded-lg px-6 pb-4 pt-8">
                     <h1>Please log in to continue.</h1>
                     <div className="w-full">
