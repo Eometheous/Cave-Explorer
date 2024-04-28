@@ -19,7 +19,7 @@ You can access the app here:
 
 NOTE!!! You cannot connect to the database without my hidden API key.
 
-This means logging in does not work locally. 
+This means logging in and signing up does not work locally. 
 
 The database is linked to the Vercel project so I cannot separate them. 
 
