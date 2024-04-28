@@ -11,9 +11,11 @@ You can access the app here:
 
 2. cd into `dev/web_app/react/cave-explorer`
 
-3. run `npm run dev`
+3. run `npm install`
 
-4. click on the url to the local web server
+4. run `npm run dev`
+
+5. click on the url to the local web server
 
 NOTE!!! You cannot connect to the database without my hidden API key.
 
