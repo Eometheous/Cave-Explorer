@@ -381,6 +381,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8080795306155892727, guid: 0a839e09968964b61bb3d7547cf6e397, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080795306155892727, guid: 0a839e09968964b61bb3d7547cf6e397, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372791136914140435, guid: 0a839e09968964b61bb3d7547cf6e397, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372791136914140435, guid: 0a839e09968964b61bb3d7547cf6e397, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9050292883161569762, guid: 0a839e09968964b61bb3d7547cf6e397, type: 3}
       propertyPath: m_Name
       value: GameBorder

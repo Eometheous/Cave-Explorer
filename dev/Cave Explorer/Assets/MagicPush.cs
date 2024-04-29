@@ -5,7 +5,7 @@ public class Drag : MonoBehaviour
 {
     Rigidbody2D rb;
     Vector3 clickedPosition;
-    Vector2 force;
+    Vector3 offset;
     bool clicked;
 
     // Start is called before the first frame update
@@ -16,23 +16,17 @@ public class Drag : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (clicked) {
-            force = Camera.main.ScreenToWorldPoint(Input.mousePosition) - clickedPosition;
-            if (Math.Abs(force.x) > Math.Abs(force.y)) force.y = 0;
-            else force.x = 0;
-            if (rb.CompareTag("Player")) {
-                rb.AddForce(force * 100);
-            }
-            else rb.AddForce(force * 10000);
-            clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            rb.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         }
     }
 
     void OnMouseDown()
     {
         clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        offset = rb.transform.position - clickedPosition;
         clicked = true;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
@@ -40,6 +34,19 @@ public class Drag : MonoBehaviour
     void OnMouseUp() 
     {
         clicked = false;
+        SnapToGrid();
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (clicked) {
+            clicked = false;
+            SnapToGrid();
+        }
+    }
+
+    void SnapToGrid() {
+        Vector2 positionInteger = new(Mathf.RoundToInt(rb.transform.position.x), Mathf.RoundToInt(rb.transform.position.y));
+        rb.transform.position = positionInteger;
     }
 }

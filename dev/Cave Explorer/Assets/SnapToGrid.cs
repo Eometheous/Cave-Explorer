@@ -12,13 +12,12 @@ public class SnapToGrid : MonoBehaviour
         colliding = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if ((rb.velocity.magnitude < .5 && !colliding) || rb.velocity.magnitude == 0) {
-            Vector2 positionInteger = new(Mathf.RoundToInt(rb.transform.position.x), Mathf.RoundToInt(rb.transform.position.y));
-            rb.transform.position = positionInteger;
-        }
+        // if ((rb.velocity.magnitude < .5 && !colliding) || rb.velocity.magnitude == 0) {
+        //     Vector2 positionInteger = new(Mathf.RoundToInt(rb.transform.position.x), Mathf.RoundToInt(rb.transform.position.y));
+        //     rb.transform.position = positionInteger;
+        // }
     }
 
     void OnCollisionEnter2D(Collision2D other) {

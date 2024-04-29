@@ -223,6 +223,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2894309593987319150, guid: 6733cddbfbcb04c92a33d060330462b9, type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: 5228923424885623155, guid: 6733cddbfbcb04c92a33d060330462b9, type: 3}
       propertyPath: m_Name
       value: Cave 1
