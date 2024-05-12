@@ -44,7 +44,7 @@ public class LoadGame : MonoBehaviour
 
     public void StartGame() 
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void LoadMainMenu() 
@@ -54,6 +54,6 @@ public class LoadGame : MonoBehaviour
 
     public void LoadLogin() 
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(8);
     }
 }
