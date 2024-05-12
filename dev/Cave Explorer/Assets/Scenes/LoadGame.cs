@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Compilation;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -13,10 +12,6 @@ public class LoadGame : MonoBehaviour
     public string email;
     public string password;
     public int level;
-
-    // [SerializeField] TextMeshProUGUI usernameText;
-    // [SerializeField] TextMeshProUGUI passwordText;
-
     public static string backendURL = "https://cave-explorer.vercel.app/api/login";
 
     void Awake()
@@ -88,6 +83,7 @@ public class LoadGame : MonoBehaviour
                 Debug.Log("Email: " + response.user.email);
                 Debug.Log("Level: " + response.user.level);
                 level = response.user.level;
+                SceneManager.LoadScene(level);
             }
             else
             {

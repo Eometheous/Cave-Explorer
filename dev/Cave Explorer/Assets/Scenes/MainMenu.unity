@@ -619,7 +619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Load Save
+  m_text: 'Login
 
 '
   m_isRightToLeft: 0
@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 1650195237}
   - component: {fileID: 1650195236}
   m_Layer: 5
-  m_Name: LoadSave
+  m_Name: Login
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
