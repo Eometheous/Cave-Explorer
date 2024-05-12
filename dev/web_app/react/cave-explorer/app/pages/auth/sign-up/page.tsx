@@ -1,25 +1,45 @@
+import { useState } from 'react';
 
+export default function SignUpForm() {
+    const [formData, setFormData] = useState({
+        email: '',
+        name: '',
+        password: ''
+    });
 
-import { FormEvent } from "react";
+    const handleChange = (e: { target: { name: any; value: any; }; }) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
 
-
-
-export default function sign_up() {
-    async function onSubmit(event: FormEvent<HTMLFormElement>) {
-        'use server';
-        event.preventDefault()
-     
-        const formData = new FormData(event.currentTarget)
-        const response = await fetch('https://cave-explorer.vercel.app/api/add-user', {
-          method: 'POST',
-          body: formData,
-        })
-        console.log("submitting data")
-    }
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('http://127.0.0.1:8080/user/sign-up', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            if (response.ok) {
+                // Handle successful form submission, e.g., show a success message
+                console.log('Form submitted successfully');
+            } else {
+                // Handle form submission error, e.g., show an error message
+                console.error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+        }
+    };
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <form action={"http://127.0.0.1:8080/user/sign-up"} className="space-y-3">
+            <form onSubmit={handleSubmit} className="space-y-3">
                 <div className="flex-1 rounded-lg px-6 pb-4 pt-8">
                     <h1>Please enter your information below</h1>
                     <div className="w-full">
@@ -34,6 +54,8 @@ export default function sign_up() {
                                     type="email"
                                     name="email"
                                     placeholder="Enter your email address"
+                                    value={formData.email}
+                                    onChange={handleChange}
                                     required
                                 />
                             </div>
@@ -44,9 +66,11 @@ export default function sign_up() {
                                 <input 
                                     className="text-black peer block w-full rounded-md border border-gray-200"
                                     id="name"
-                                    type="name"
+                                    type="text"
                                     name="name"
-                                    placeholder="Enter your user name"
+                                    placeholder="Enter your username"
+                                    value={formData.name}
+                                    onChange={handleChange}
                                     required
                                 />
                             </div>
@@ -60,6 +84,8 @@ export default function sign_up() {
                                     type="password"
                                     name="password"
                                     placeholder="Enter your password"
+                                    value={formData.password}
+                                    onChange={handleChange}
                                     required
                                 />
                             </div>
