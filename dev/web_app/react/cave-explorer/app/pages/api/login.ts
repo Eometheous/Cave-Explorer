@@ -8,7 +8,7 @@ interface LoginRequestBody  {
     password: string;
 }
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method === 'POST') {
+    // if (req.method === 'POST') {
         const {email, password} = req.body as LoginRequestBody;
 
         try {
@@ -27,8 +27,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         } catch (error) {
             res.status(401).json({ success: false, message: error});
         }
-    }
-    else {
-        res.status(405).json({ success: false, message: 'Method Not Allowed' });
-    }
+    // }
+    // else {
+    //     res.status(405).json({ success: false, message: 'Method Not Allowed' });
+    // }
 }
