@@ -12,7 +12,7 @@ public class LoadGame : MonoBehaviour
     public string email;
     public string password;
     public int level;
-    public static string backendURL = "https://cave-explorer.vercel.app/api/login";
+    public static string backendURL = "http://127.0.0.1:8080";
 
     void Awake()
     {
@@ -63,11 +63,25 @@ public class LoadGame : MonoBehaviour
 
     private IEnumerator LoginRequest(string email, string password)
     {
-        WWWForm form = new();
-        form.AddField("email", email);
-        form.AddField("password", password);
+        // WWWForm form = new();
+        // form.AddField("email", email);
+        // form.AddField("password", password);
+        User user = new()
+        {
+            email = email,
+            password = password
+        };
 
-        UnityWebRequest request = UnityWebRequest.Post(backendURL, form);
+        string json = JsonUtility.ToJson(user);
+
+
+        // UnityWebRequest request = UnityWebRequest.Post(backendURL, form);
+        UnityWebRequest request = UnityWebRequest.PostWwwForm(backendURL + "/user/login", json);
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
+        request.uploadHandler = new UploadHandlerRaw(jsonToSend);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.Success)
@@ -108,6 +122,7 @@ public class LoadGame : MonoBehaviour
     private class User
     {
         public string email;
+        public string password;
         public int level;
     }
 }
