@@ -1,21 +1,5 @@
 
-
-import { FormEvent } from "react";
-
-
-
 export default function sign_up() {
-    async function onSubmit(event: FormEvent<HTMLFormElement>) {
-        'use server';
-        event.preventDefault()
-     
-        const formData = new FormData(event.currentTarget)
-        const response = await fetch('https://cave-explorer.vercel.app/api/add-user', {
-          method: 'POST',
-          body: formData,
-        })
-        console.log("submitting data")
-    }
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
