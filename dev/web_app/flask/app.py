@@ -35,8 +35,10 @@ async def sign_up():
         cursor.execute("INSERT INTO users (name, email, password) VALUES (%s, %s, %s)", (username, email, hash))
         connection.commit()
         cursor.close()
-
-    return
+    return jsonify({
+            'success': True,
+            'message': 'Succesful'
+        }), 200
 
 @app.route("/user/login", methods=['POST'])
 async def login():
@@ -66,7 +68,7 @@ async def login():
                 'email': user['email'],
                 'level': user['level']
             }
-        })
+        }), 200
     
     except Exception as e:
         return jsonify({
