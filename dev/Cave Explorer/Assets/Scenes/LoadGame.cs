@@ -17,7 +17,7 @@ public class LoadGame : MonoBehaviour
     // [SerializeField] TextMeshProUGUI usernameText;
     // [SerializeField] TextMeshProUGUI passwordText;
 
-    public static string backendURL = "https://cave-explorer-git-adding-proper-log-7845d5-eometheous-projects.vercel.app/api/login";
+    public static string backendURL = "https://cave-explorer.vercel.app/api/login";
 
     void Awake()
     {
