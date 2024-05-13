@@ -47,7 +47,7 @@ The database is linked to the Vercel project so I cannot separate them.
 
 5. Install all dependencies with `pip3 install -r requirements.txt`
 
-6. Finally, start the server with `python3 app.py`
+6. Finally, start the server with `python3 application.py `
 
 <h2>Unity (Optional)</h2>
 
