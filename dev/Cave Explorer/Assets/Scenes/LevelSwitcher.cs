@@ -11,7 +11,7 @@ public class LevelSwitcher : MonoBehaviour
 {
     static int level;
 
-    private static string backendURL = "http://127.0.0.1:8080/user/increment-level";
+    private static string backendURL = "https://18.218.95.240:5000/user/increment-level";
 
 
     // Start is called before the first frame update
