@@ -8,24 +8,26 @@ using UnityEngine.SceneManagement;
 
 public class LoadGame : MonoBehaviour
 {
-    private static LoadGame instance;
     public string email;
     public string password;
     public int level;
-    public static string backendURL = "http://127.0.0.1:8080";
+    public static string backendURL = "http://127.0.0.1:8080/user/login";
 
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    public User user;
+    public LoginResponse response;
+
+    // void Awake()
+    // {
+    //     if (instance == null)
+    //     {
+    //         instance = this;
+    //         DontDestroyOnLoad(gameObject);
+    //     }
+    //     else
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
 
     public void GrabUsernameText(string email)
     {
@@ -38,7 +40,7 @@ public class LoadGame : MonoBehaviour
 
     public void StartGame() 
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(PlayerPrefs.GetInt("level"));
     }
 
     public void LoadMainMenu() 
@@ -63,40 +65,29 @@ public class LoadGame : MonoBehaviour
 
     private IEnumerator LoginRequest(string email, string password)
     {
-        // WWWForm form = new();
-        // form.AddField("email", email);
-        // form.AddField("password", password);
-        User user = new()
-        {
-            email = email,
-            password = password
-        };
+        WWWForm form = new();
+        form.AddField("email", email);
+        form.AddField("password", password);
 
-        string json = JsonUtility.ToJson(user);
-
-
-        // UnityWebRequest request = UnityWebRequest.Post(backendURL, form);
-        UnityWebRequest request = UnityWebRequest.PostWwwForm(backendURL + "/user/login", json);
-        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
-        request.uploadHandler = new UploadHandlerRaw(jsonToSend);
-        request.downloadHandler = new DownloadHandlerBuffer();
-        request.SetRequestHeader("Content-Type", "application/json");
+        UnityWebRequest request = UnityWebRequest.Post(backendURL, form);
 
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.Success)
         {
-            Debug.Log(request.downloadHandler.text);
+            // Debug.Log("Success!");
+            // Debug.Log(request.downloadHandler.text);
 
             string jsonResponse = request.downloadHandler.text;
-            LoginResponse response = JsonUtility.FromJson<LoginResponse>(jsonResponse);
+            Debug.Log(jsonResponse);
+
+            response = JsonUtility.FromJson<LoginResponse>(jsonResponse);
 
             if (response.success) 
             {
-                Debug.Log("Login succesfull");
-                Debug.Log("Email: " + response.user.email);
-                Debug.Log("Level: " + response.user.level);
                 level = response.user.level;
+                PlayerPrefs.SetString("email", response.user.email);
+                PlayerPrefs.SetInt("level", response.user.level);
                 SceneManager.LoadScene(level);
             }
             else
@@ -110,19 +101,18 @@ public class LoadGame : MonoBehaviour
         }
     }
 
-    [System.Serializable]
-    private class LoginResponse
+    [Serializable]
+    public class LoginResponse
     {
         public bool success;
         public string message;
         public User user;
     }
 
-    [System.Serializable]
-    private class User
+    [Serializable]
+    public class User
     {
         public string email;
-        public string password;
         public int level;
     }
 }

@@ -1,4 +1,5 @@
 import asyncpg
+import psycopg2
 from bcrypt import checkpw
 import bcrypt
 from flask import Flask, jsonify, request
@@ -6,23 +7,26 @@ from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
-async def connect_to_database():
+def connect_to_database():
     load_dotenv()
-    return await asyncpg.connect(
+    return psycopg2.connect(
         database=os.getenv('POSTGRES_DATABASE'),
         user=os.getenv('POSTGRES_USER'),
         password=os.getenv('POSTGRES_PASSWORD'),
         host=os.getenv('POSTGRES_HOST')
     )
 
-async def fetch_user(email):
+def fetch_user(email):
     connection = connect_to_database()
-    user = await connection.fetchrow("SELECT * FROM users WHERE email = %s", email)
-    await connection.close()
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM users WHERE email='{0}'".format(email))
+    user = user = cursor.fetchone()
+    cursor.close()
+    connection.close()
     return user
 
 @app.route("/user/sign-up", methods=['POST'])
-async def sign_up():
+def sign_up():
     connection = connect_to_database()
     if request.method == 'POST':
         email = request.form['email']
@@ -41,8 +45,8 @@ async def sign_up():
         }), 200
 
 @app.route("/user/login", methods=['POST'])
-async def login():
-    data = request.json
+def login():
+    data = request.form
     
     email = data.get('email')
     password = data.get('password')
@@ -51,12 +55,12 @@ async def login():
         if not email or not password:
             raise ValueError('Email and password are required')
         
-        user = await fetch_user(email)
+        user = fetch_user(email)
 
         if not user:
             raise ValueError('Email or password is incorrect')
         
-        password_match = checkpw(password.encode('utf-8'), user['password'].encode('utf-8'))
+        password_match = checkpw(password.encode('utf-8'), user[3].encode('utf-8'))
 
         if not password_match:
             raise ValueError('Email or password is inccorect')
@@ -64,9 +68,9 @@ async def login():
         return jsonify({
             'success': True,
             'message': 'Login succesful',
-            'user:': {
-                'email': user['email'],
-                'level': user['level']
+            'user': {
+                'email': user[2],
+                'level': user[4]
             }
         }), 200
     
@@ -74,7 +78,44 @@ async def login():
         return jsonify({
             'success': False,
             'message': str(e)
-        }), 401
+        }), 500
+    
+def increment_user_level(email):
+    connection = connect_to_database()
+    cursor = connection.cursor()
+    cursor.execute("UPDATE users SET level = level + 1 WHERE email='{0}'".format(email))
+    connection.commit()
+    cursor.close()
+    connection.close()
+    
+@app.route("/user/increment-level", methods=['POST'])
+def increment_level():
+    data = request.form
+    
+    email = data.get('email')
+
+    try:
+        if not email:
+            raise ValueError('Email required')
+        
+        user = fetch_user(email)
+
+        if not user:
+            raise ValueError('Email not found')
+        
+        increment_user_level(email)
+        
+        return jsonify({
+            'success': True,
+            'message': 'Increment succesful'
+        }), 200
+    
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': str(e)
+        }), 500
+
 
 
 if __name__ == '__main__':
