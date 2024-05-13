@@ -2,7 +2,7 @@
 <b>
 Basic information
 </b>
-The project title: Eometheous' Sliding Puzzle Game 
+The project title: Cave Explorer
 <br>
 <br>
 <b>Milestones  with deadlines</b>

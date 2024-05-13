@@ -23,7 +23,7 @@ This means logging in and signing up does not work locally.
 
 The database is linked to the Vercel project so I cannot separate them. 
 
-<h2>Flask (Skip for now)</h2>
+<h2>Flask</h2>
 
 1. Open another terminal window to run the flask server
 
@@ -45,9 +45,9 @@ The database is linked to the Vercel project so I cannot separate them.
         .venv\Scripts\activate
 
 
-5. Install flask with `pip install Flask`
+5. Install all dependencies with `pip3 install -r requirements.txt`
 
-6. Finally, start the server with `python3 -m flask --app app.py run`
+6. Finally, start the server with `python3 app.py`
 
 <h2>Unity (Optional)</h2>
 

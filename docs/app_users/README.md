@@ -1,5 +1,7 @@
 <h1>How to play Cave Explorer</h1>
 <p>
+Cave Explorer can be played at https://cave-explorer.vercel.app
+
 Cave explorer is a puzzle game with the goal of reaching a magical book at the end of a deep cave.
 There will be many obstacle in your path, but using your magic abilities you can push them out of
 the way to progress further into the cave. The puzzles will become more challenging as your proceed.
