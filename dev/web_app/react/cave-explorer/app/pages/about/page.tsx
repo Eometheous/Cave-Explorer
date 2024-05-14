@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-export default function About() {
+export default function about() {
     return (
         <div>
             <Head>
