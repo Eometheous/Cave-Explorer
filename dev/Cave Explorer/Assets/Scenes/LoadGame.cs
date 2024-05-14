@@ -11,7 +11,7 @@ public class LoadGame : MonoBehaviour
     public string email;
     public string password;
     public int level;
-    public static string backendURL = "https://18.218.95.240:5000/user/login";
+    public static string backendURL = "http://3.14.70.33:8080/user/login";
 
     public User user;
     public LoginResponse response;

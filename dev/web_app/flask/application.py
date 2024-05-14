@@ -25,6 +25,10 @@ def fetch_user(email):
     connection.close()
     return user
 
+@app.route("/")
+def home():
+    return jsonify({'success': True})
+
 @app.route("/user/sign-up", methods=['POST'])
 def sign_up():
     connection = connect_to_database()
