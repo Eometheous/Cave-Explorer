@@ -11,23 +11,10 @@ public class LoadGame : MonoBehaviour
     public string email;
     public string password;
     public int level;
-    public static string backendURL = "http://3.14.70.33:8080/user/login";
+    public static string backendURL = "ec2-3-14-70-33.us-east-2.compute.amazonaws.com:8080/user/login";
 
     public User user;
     public LoginResponse response;
-
-    // void Awake()
-    // {
-    //     if (instance == null)
-    //     {
-    //         instance = this;
-    //         DontDestroyOnLoad(gameObject);
-    //     }
-    //     else
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
 
     public void GrabUsernameText(string email)
     {
@@ -40,7 +27,14 @@ public class LoadGame : MonoBehaviour
 
     public void StartGame() 
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("level"));
+        if (PlayerPrefs.GetInt("level") == 0) 
+        {
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("level"));
+        }
     }
 
     public void LoadMainMenu() 
