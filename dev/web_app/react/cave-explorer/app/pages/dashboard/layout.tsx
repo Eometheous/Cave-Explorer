@@ -48,7 +48,7 @@ export default function RootLayout({
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Learn more about this game. 
+          Cave Explorer is a simple sliding puzzle game where a user gets a square piece from the starting slot into the end slot. You do this by clicking and dragging the white square to the top of the level. It will start simple and slowly introduce more blocks blocking the path. 
           </p>
         </Link>
 
